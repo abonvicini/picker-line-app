@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import Line from './Line'
 
 function LineList() {
-  const [lines, setLines] = useState([
+
+  // agregar el setLines del useState cuando se utilice ya que no deja deployar.
+    const [lines] = useState([
     {
       name: 'Linea 1',
       numbers: '11 56 73',
