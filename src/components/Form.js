@@ -13,13 +13,24 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function Form({ name, numbers, onSubmit }) {
+function Form({ name, numbers, onSubmit, setLines, lines, id }) {
 
   const [formName, setFormName] = useState("")
 
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit(formName)
+    setLines(
+      lines.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            available: !item.available
+          }
+        }
+        return item;
+      })
+    )
   }
 
   const handleChange = (event) => {

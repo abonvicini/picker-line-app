@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const SimpleModal = ({ name, numbers, id, onSelected }) => {
+const SimpleModal = ({ name, numbers, id, onSelected, setLines, lines }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -43,7 +43,7 @@ const SimpleModal = ({ name, numbers, id, onSelected }) => {
 
   const body = (
     <div className={classes.paper}>
-      <Form name={name} numbers={numbers} onSubmit={handleSubmit} />
+      <Form name={name} numbers={numbers} onSubmit={handleSubmit} id={id} setLines={setLines} lines={lines}/>
     </div>
   );
 
